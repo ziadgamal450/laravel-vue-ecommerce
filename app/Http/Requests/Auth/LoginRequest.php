@@ -55,6 +55,16 @@ class LoginRequest extends FormRequest
         }
 
         $user = $this->user();
+        if ($user->is_admin) {
+            Auth::guard('web')->logout();
+            $this->session()->invalidate();
+            $this->session()->regenerateToken();
+
+            throw ValidationException::withMessages([
+                'email' => __('auth.failed'),
+            ]);
+        }
+
         $customer = $user->customer;
         if ($customer->status !== CustomerStatus::Active->value) {
             Auth::guard('web')->logout();

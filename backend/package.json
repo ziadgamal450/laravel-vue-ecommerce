@@ -10,7 +10,7 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^39.0.1",
     "@ckeditor/ckeditor5-vue": "^5.1.0",
-    "axios": "^0.27.2",
+    "axios": "^1.6.8",
     "chart.js": "^3.9.1",
     "sortablejs": "^1.15.0",
     "sortablejs-vue3": "^1.2.9",
